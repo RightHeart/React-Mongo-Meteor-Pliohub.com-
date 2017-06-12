@@ -1,0 +1,101 @@
+.at-form {
+  float: none;
+  margin: auto;
+
+  p {
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 767px) {
+    .form-control-label {
+      display: none;
+    }
+  }
+}
+
+.at-title {
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: 800;
+    text-align: center;
+  }
+}
+
+.at-link.disabled {
+  color: #444;
+}
+
+.at-signup-link {
+  text-align: center;
+}
+
+.at-pwd-link {
+  text-align: center;
+}
+
+.at-signin-link {
+  text-align: center;
+}
+
+.at-error,
+.at-result {
+  text-align: center;
+}
+
+.at-oauth {
+  margin-top: 10px;
+}
+
+.at-input.validating * {
+  cursor: progress;
+}
+
+.at-pwd-form {
+  >form {
+    label {
+      margin-bottom: 5px;
+      font-weight: 500;
+      font-size: 14px;
+    }
+  }
+}
+
+.at-btn {
+  font-size: 16px;
+  display: block;
+  margin: 0 auto;
+}
+
+.text-help {
+  display: block;
+  margin-top: 5px;
+}
+
+#at-plio-logo {
+  display: block;
+  margin: 4rem auto;
+  max-width: 150px;
+
+  @media (max-width: 767px) {
+    margin: 3rem auto;
+    max-width: 100px;
+  }
+
+  @media (max-height: 500px) and (max-width: 767px) {
+    display: none;
+  }
+}
+
+#at-p-logo {
+  display: block;
+  margin: 4rem auto;
+  max-width: 30px;
+
+  @media (max-width: 767px) {
+    margin: 3rem auto;
+  }
+}
