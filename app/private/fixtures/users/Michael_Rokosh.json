@@ -1,0 +1,56 @@
+{
+  "_id": "ABKpuGYiJHKhDwLDk",
+  "createdAt": {"$date": 1459508400000},
+  "services": {
+    "password": {
+      "bcrypt": "$2a$10$PpFrYXSDKldZEZLULs3lZeEh0riMIkVhBktIAW7Abo1frk/n/TyAO"
+    },
+    "resume": {
+      "loginTokens": [ ]
+    }
+  },
+  "emails": [
+    {
+      "address": "mike@jssolutionsdev.com",
+      "verified": true
+    }
+  ],
+  "preferences": {
+    "areNotificationsEnabled": true,
+    "notificationSound": "/sounds/graceful"
+  },
+  "profile": {
+    "firstName": "Michael",
+    "lastName": "Rokosh",
+    "initials": "MR",
+    "description": "IT manager",
+    "avatar": "https://s3-eu-west-1.amazonaws.com/plio/avatar-placeholders/2.png",
+    "skype": "m.rokosh",
+    "country": "UK",
+    "phoneNumbers": [
+      {
+        "_id": "sWz653iQ3gbebD4bM",
+        "type": "Work",
+        "number": "+44 1234 123 456"
+      },
+      {
+        "_id": "o89nFj8gYHYHCZytG",
+        "type": "Mobile",
+        "number": "+44 9870 654 321"
+      }
+    ]
+  },
+  "status": "offline",
+  "statusConnection": "offline",
+  "roles": {
+    "8bcNPN8sKTtJFw4uy": [
+      "create-update-delete-standards",
+      "view-team-actions",
+      "invite-users",
+      "delete-users",
+      "edit-user-roles",
+      "change-org-settings"
+    ]
+  },
+  "isNotificationsEnabled": true
+}

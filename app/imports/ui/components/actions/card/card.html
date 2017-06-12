@@ -1,0 +1,143 @@
+<template name="Actions_Card_Read">
+  <div class="content-cards-inner flex scroll">
+    {{#if showCard}}
+      {{#with action}}
+        {{#Card_Read
+          isReadOnly=isReadOnly
+          cardTitle=(_getNameByType this.type)
+          doc=this
+          docType=this.type
+          collection="Actions"
+          isReady=isReady
+          onRestore=(callback 'restore')
+          onDelete=(callback 'delete')
+          onOpenEditModal=(callback 'openEditModal')}}
+
+          <div class="list-group">
+            {{#Fields_ListGroupItem_Read
+              label="Title"}}
+              <span>{{this.title}}</span>
+              <span class="label margin-left" {{b "text: this.sequentialId, class: 'label-'+getClassByStatus(this.status)"}}></span>
+              <span class="label text-default" {{b "text: getStatusName(this.status)"}}></span>
+            {{/Fields_ListGroupItem_Read}}
+
+            {{#with description}}
+              {{> Fields_ListGroupItem_Read
+                  label="Description"
+                  text=this}}
+            {{/with}}
+
+            {{#with this.linkedTo}}
+              {{> Actions_LinkedTo_Read linkedTo=this}}
+            {{/with}}
+
+            <div class="row">
+              {{#with this.createdAt}}
+                <div class="col-sm-6">
+                  {{> Fields_ListGroupItem_Read
+                      label="Created date"
+                      text=(renderDate this)}}
+                </div>
+              {{/with}}
+              {{#with this.ownerId}}
+                <div class="col-sm-6">
+                  {{> Fields_ListGroupItem_Read
+                      label="Owner"
+                      text=(userNameOrEmail this)}}
+                </div>
+              {{/with}}
+            </div>
+
+            {{#with this.planInPlace}}
+              {{> Fields_ListGroupItem_Read
+                  label="Plan in place?"
+                  text=this
+                  className=(getClassForPlanInPlace this)}}
+            {{/with}}
+          </div>
+
+          <div class="list-group">
+            <div class="row">
+              <div class="col-sm-6">
+                {{#if this.isCompleted}}
+                  {{> Fields_ListGroupItem_Read
+                      label="Completed date"
+                      text=(renderDate this.completedAt)}}
+                {{else}}
+                  {{> Fields_ListGroupItem_Read
+                      label="Completion target date"
+                      text=(renderDate this.completionTargetDate)}}
+                {{/if}}
+              </div>
+              <div class="col-sm-6">
+                {{#if this.isCompleted}}
+                  {{> Fields_ListGroupItem_Read
+                      label="Completed by"
+                      text=(userNameOrEmail this.completedBy)}}
+                {{else}}
+                  {{> Fields_ListGroupItem_Read
+                      label="To be completed by"
+                      text=(userNameOrEmail this.toBeCompletedBy)}}
+                {{/if}}
+              </div>
+            </div>
+            {{#with this.completionComments}}
+              {{> Fields_ListGroupItem_Read
+                  label="Comments"
+                  text=this}}
+            {{/with}}
+          </div>
+
+          {{#if this.toBeVerifiedBy}}
+            <div class="list-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  {{#if this.isVerified}}
+                    {{> Fields_ListGroupItem_Read
+                        label=(getVerifiedDateLabel this)
+                        text=(renderDate this.verifiedAt)}}
+                  {{else}}
+                    {{> Fields_ListGroupItem_Read
+                        label="Verification target date"
+                        text=(renderDate this.verificationTargetDate)}}
+                  {{/if}}
+                </div>
+                <div class="col-sm-6">
+                  {{#if this.isVerified}}
+                    {{> Fields_ListGroupItem_Read
+                        label="Verified by"
+                        text=(userNameOrEmail this.verifiedBy)}}
+                  {{else}}
+                    {{> Fields_ListGroupItem_Read
+                        label="To be verified by"
+                        text=(userNameOrEmail this.toBeVerifiedBy)}}
+                  {{/if}}
+                </div>
+              </div>
+              {{#with this.verificationComments}}
+                {{> Fields_ListGroupItem_Read
+                    label="Comments"
+                    text=this}}
+              {{/with}}
+            </div>
+          {{/if}}
+
+          {{#with this.notify}}
+            {{> Subcards_Notify_Read users=this}}
+          {{/with}}
+
+          {{> Subcards_Notes_Read notes=this.notes}}
+
+          {{> Subcards_OtherFiles_Read label="Files" fileIds=this.fileIds}}
+        {{/Card_Read}}
+
+      {{/with}}
+    {{else}}
+      <div class="card">
+        <div class="card-block card-heading">
+          <h5>There are no actions yet! Click on the 'Add' button to create your first action.</h5>
+        </div>
+      </div>
+    {{/if}}
+  </div>
+</template>

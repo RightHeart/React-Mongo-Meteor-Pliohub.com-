@@ -1,0 +1,18 @@
+<template name="Actions_VerifiedBy">
+  {{#FormField label="Verified by"}}
+    {{#Completion_Edit
+      isButtonVisible=false
+      canButtonBeShown=canBeUndone
+      onUndo=undo}}
+
+      {{> Select_Member (selectArgs)}}
+
+    {{/Completion_Edit}}
+
+    {{#if canBeUndone}}
+      <p class="text-muted">
+        Verified {{passedFromVerified}}, {{leftToUndo}} left to undo
+      </p>
+    {{/if}}
+  {{/FormField}}
+</template>

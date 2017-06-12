@@ -1,0 +1,18 @@
+<template name="UserEdit_PhoneNumber">
+  <div class="form-group row">
+    <div class="form-group-flex col-sm-12">
+      <div class="form-group-flex-flex margin-right">
+        {{#ClearableField field="number"}}
+          <input type="text" class="form-control" placeholder="Number"
+              {{b "value: number, focusout: onNumberChanged, enable: isEditable"}} />
+        {{/ClearableField}}
+      </div>
+      <div class="margin-right">
+        <select class="c-select"
+          {{b "options: phoneTypes, value: type, enable: isEditable"}}>
+        </select>
+      </div>
+      {{> DeleteButton onClick=deleteFn isEnabled=isEditable}}
+    </div>
+  </div>
+</template>

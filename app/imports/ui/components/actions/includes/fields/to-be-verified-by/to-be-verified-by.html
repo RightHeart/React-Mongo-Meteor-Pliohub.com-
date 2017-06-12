@@ -1,0 +1,17 @@
+<template name="Actions_ToBeVerifiedBy">
+  {{#FormField label="To be verified by"}}
+    {{#Completion_Edit
+      isButtonVisible=true
+      canButtonBeShown=canBeVerified
+      buttonDefaultText="Verify"
+      buttonSuccessText="Verified as effective"
+      buttonFailText="Assessed as ineffective"
+      placeholder="Enter any verification comments"
+      onComplete=verify
+      onFail=failVerification}}
+
+      {{> Select_Member (selectArgs)}}
+
+    {{/Completion_Edit}}
+  {{/FormField}}
+</template>

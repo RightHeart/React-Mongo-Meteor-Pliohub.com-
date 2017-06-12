@@ -1,0 +1,34 @@
+{
+  "_id": "RifbrzLTCGKPGbENM",
+  "createdAt": {"$date": 1459508400000},
+  "services": {
+    "password": {
+      "bcrypt": "$2a$10$PpFrYXSDKldZEZLULs3lZeEh0riMIkVhBktIAW7Abo1frk/n/TyAO"
+    },
+    "resume": {
+      "loginTokens": [ ]
+    }
+  },
+  "emails": [
+    {
+      "address": "mykola@jssolutionsdev.com",
+      "verified": true
+    }
+  ],
+  "preferences": {
+    "areNotificationsEnabled": true,
+    "notificationSound": "/sounds/graceful"
+  },
+  "profile": {
+    "avatar": "https://s3-eu-west-1.amazonaws.com/plio/avatar-placeholders/11.png"
+  },
+  "status": "offline",
+  "statusConnection": "offline",
+  "roles": {
+    "KwKXz5RefrE5hjWJ2": [
+      "create-update-delete-standards",
+      "view-team-actions"
+    ]
+  },
+  "isNotificationsEnabled": true
+}

@@ -1,0 +1,49 @@
+{
+  "_id" : "aqtqWNPrc9fNi6wyp",
+  "organizationId" : "KwKXz5RefrE5hjWJ2",
+  "serialNumber" : 2,
+  "sequentialId" : "RK2",
+  "title" : "Explosion of binder",
+  "identifiedBy" : "SQHmBKJ94gJvpLKLt",
+  "identifiedAt" : {"$date": 1459508500000},
+  "magnitude" : "major",
+  "typeId" : "jzNDq2RgCd8JshYD9",
+  "createdAt" : {"$date": 1459508500000},
+  "createdBy" : "SQHmBKJ94gJvpLKLt",
+  "viewedBy" : [
+    "SQHmBKJ94gJvpLKLt"
+  ],
+  "notify" : [
+    "SQHmBKJ94gJvpLKLt"
+  ],
+  "analysis" : {
+    "status" : 0
+  },
+  "updateOfStandards" : {
+    "status" : 0,
+    "executor": "ABKpuGYiJHKhDwLDk",
+    "targetDate": {"$date": 1469532269427}
+  },
+  "status" : 11,
+  "updatedAt" : {"$date": 1459508500000},
+  "updatedBy" : "SQHmBKJ94gJvpLKLt",
+  "score" : {
+    "rowId" : 1,
+    "value" : 65,
+    "scoredBy" : "SQHmBKJ94gJvpLKLt",
+    "scoredAt" : {"$date": 1459508500000}
+  },
+  "standardsIds": [
+    "Mc7jjwYJ9gXPkibS8"
+  ],
+  "scores": [
+    {
+      "_id": "geZoaui4epXSWTjET",
+      "rowId": 1,
+      "value": 100,
+      "scoredBy": "jxqMcYJnutasmKKZH",
+      "scoredAt": "2016-08-01T21:00:00.000Z"
+    }
+  ],
+  "workflowType" : "6-step"
+}

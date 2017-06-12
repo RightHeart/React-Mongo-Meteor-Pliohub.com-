@@ -1,0 +1,31 @@
+<template name="UserEdit_PhoneNumbers">
+  <div id="phones-forms">
+    <div class="row">
+      <label class="form-control-label col-sm-4 col-xs-12 first-row-label">
+        Phone number(s)
+      </label>
+      <div class="col-sm-8">
+        <div {{b "ref: forms"}}>
+          {{#each phoneNumbers}}
+            {{> UserEdit_PhoneNumber
+                number=number
+                type=type
+                _id=_id
+                onChange=onChangeCb
+                onDelete=onDeleteCb
+                isEditable=isEditable}}
+          {{/each}}
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <button type="button" class="btn btn-secondary add-phone"
+                {{b "click: addPhoneForm, enable: isEditable"}}>
+              Add another phone number
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

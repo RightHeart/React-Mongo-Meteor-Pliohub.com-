@@ -1,0 +1,80 @@
+<template name="EditStandard">
+  <div>
+    <div class="relative">
+      <div class="card-block">
+        {{> Standards_Title_Edit title=standard.title _id=standard._id}}
+
+        {{> DescriptionTextBox description=standard.description}}
+
+        {{> ESBookSection selectedBookSectionId=standard.sectionId _id=standard.sectionId}}
+
+        {{> ESType typeId=standard.typeId _id=standard._id}}
+
+        {{> UniqueNumberField uniqueNumber=standard.uniqueNumber _id=standard._id}}
+
+        {{> Standards_Owner_Edit owner=standard.owner _id=standard._id}}
+
+        {{> IssueNumber_Edit issueNumber=standard.issueNumber _id=standard._id}}
+
+        {{> StandardStatus_Edit status=standard.status _id=standard._id}}
+
+        {{> Departments_Edit _id=standard._id departmentsIds=standard.departmentsIds}}
+
+        <hr>
+
+        {{> ESSources
+            sourceType=standard.source1.type
+            sourceUrl=standard.source1.url
+            sourceFileId=standard.source1.fileId
+            sourceHtmlUrl = standard.source1.htmlUrl
+            label="Source file"
+            id=1}}
+
+        {{#if standard.source1}}
+          {{> ESSources
+              sourceType=standard.source2.type
+              sourceUrl=standard.source2.url
+              sourceFileId=standard.source2.fileId
+              sourceHtmlUrl = standard.source2.htmlUrl
+              label="Source file 2"
+              id=2}}
+        {{/if}}
+
+      </div>
+
+      {{> Subcards_Notify_Edit
+          doc=standard
+          documentType="standard"
+          onUpdate=onUpdateNotifyUserCb}}
+
+      {{> Subcards_NonConformities_Edit
+          _id=this._id
+          _query=_getNCsQuery}}
+
+      {{> Subcards_Risks_Edit
+          _id=this._id
+          _query=_getRisksQuery}}
+
+      {{> Subcards_Actions_Edit (getActionsArgs 'CA')}}
+
+      {{> Subcards_Actions_Edit (getActionsArgs 'PA')}}
+
+      {{> Subcards_ImprovementPlan_Edit
+          improvementPlan=standard.improvementPlan}}
+
+      {{> Subcards_LessonsLearned_Edit
+          documentId=standard._id
+          documentType="standard"
+          linkedTo=standard.title}}
+
+      {{> Subcards_Reviews_Edit
+          documentId=standard._id
+          documentType="standard"}}
+      <div class="card-block text-xs-center">
+        <button type="button" class="btn btn-secondary" {{b "click: remove"}}>
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,17 @@
+<template name="Risks_Create">
+  {{#Card_Create ref="card"}}
+    {{> NC_Title_Edit label="Risk name"}}
+
+    {{> Fields_Standards_Edit
+        isEditable=isStandardsEditable
+        standardsIds=standardsIds}}
+
+    {{> NC_IdentifiedBy_Edit}}
+
+    {{> NC_IdentifiedDate_Edit}}
+
+    {{> Problems_Magnitude_Edit guidelines=RKGuidelines}}
+
+    {{> Risks_Type_Edit}}
+  {{/Card_Create}}
+</template>

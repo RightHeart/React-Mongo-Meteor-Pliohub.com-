@@ -1,0 +1,23 @@
+<template name="WorkInbox_Item">
+  {{#ListItemLink (linkArgs)}}
+    {{#if linkedDocument}}
+      <span class="label label-status-indicator"
+        {{b "class: 'label-' + getClassByStatus(status)"}}></span>
+    {{/if}}
+    <div class="list-group-item-content">
+      <div class="flexbox-row">
+        <h4 class="list-group-item-heading pull-left">
+          <span>{{getTitle this}}</span>
+          {{#if isNew}}
+            <span class="label label-primary">New</span>
+          {{/if}}
+        </h4>
+        <div class="flex">
+          <p class="list-group-item-text pull-right">{{getUserText this}}</p>
+        </div>
+      </div>
+      <p class="list-group-item-text pull-left">{{getDescription this}}</p>
+      <p class="list-group-item-text pull-right">{{getDate this}}</p>
+    </div>
+  {{/ListItemLink}}
+</template>

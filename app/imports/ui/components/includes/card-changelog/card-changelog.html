@@ -1,0 +1,55 @@
+<template name="CardChangelog">
+  {{#with document}}
+    <div class="card-footer card-changelog-toggle" {{b "click: toggleLogs, class: { collapsed: collapsed, waiting: loadingLogs }"}}>
+      <div class="row">
+        <div class="col-xs-6">
+          Created by: <span {{b "text: getUser(this.createdBy)"}}></span>
+          <br>Date: <span {{b "text: renderDate(this.createdAt)"}}></span>
+        </div>
+        {{#if lastUserLog}}
+          <div class="col-xs-6">
+            Last edited by: <span {{b "text: getUser(lastUserLogExecutor)"}}></span>
+            <br>Date: <span {{b "text: renderDate(lastUserLogDate)"}}></span>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+
+    <div class="card-changelog collapse" {{b "ref: collapse, class: { in: !collapsed}"}}>
+      {{#if logs.count}}
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Change summary</th>
+              <th class="text-right">Date &amp; time</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each logs}}
+              <tr>
+                <td class="log-user">{{getUser executor}}</td>
+                <td>{{message}}</td>
+                <td class="log-date text-right">{{getPrettyDate date}}</td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      {{/if}}
+      <div class="card-footer">
+        {{#unless showAllLogs}}
+          <a class="btn btn-secondary pointer" {{b "click: loadAllLogs, class: { not-visible: viewButtonHidden }"}}>
+            View all changes ({{logsLength}} total)
+            {{#if loadingAllLogs}}
+              <i class="fa fa-spinner fa-pulse"></i>
+            {{/if}}
+          </a>
+        {{else}}
+          <a class="btn btn-secondary pointer" {{b "click: viewRecentLogs"}}>
+            View {{limit}} recent changes
+          </a>
+        {{/unless}}
+      </div>
+    </div>
+  {{/with}}
+</template>

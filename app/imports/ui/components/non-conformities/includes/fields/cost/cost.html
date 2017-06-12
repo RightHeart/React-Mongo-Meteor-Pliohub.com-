@@ -1,0 +1,12 @@
+<template name="NC_Cost_Edit">
+  {{#FormField label="Approx cost per occurrence?" helpText=helpMessage}}
+    <div class="input-group">
+      {{#ClearableField field="cost"}}
+        <div class="input-group">
+          <span class="input-group-addon" {{b "text: currency"}}></span>
+          <input type="text" class="form-control" placeholder="Approx cost" {{b "value: cost, focusout: update"}}/>
+        </div>
+      {{/ClearableField}}
+    </div>
+  {{/FormField}}
+</template>

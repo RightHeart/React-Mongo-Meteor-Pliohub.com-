@@ -1,0 +1,14 @@
+<template name="NC_Header">
+  {{#if isDiscussionOpened}}
+    {{#with NC}}
+      {{#Navbar}}
+        {{#Navbar_Title}}
+          {{this.title}}
+        {{/Navbar_Title}}
+        {{> Navbar_Arrow onClick=(callback 'onNavigate')}}
+      {{/Navbar}}
+    {{/with}}
+  {{else}}
+    {{> PageHeader (headerArgs)}}
+  {{/if}}
+</template>

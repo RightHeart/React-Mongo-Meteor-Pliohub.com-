@@ -1,0 +1,14 @@
+<template name="Subcards_OtherFiles_Read">
+  {{#if files.length}}
+    <div class="card-block card-subheading">
+      <h4 class="card-title">{{label}}</h4>
+    </div>
+    <div class="list-group">
+      <div class="list-group-item">
+        {{#each files}}
+          {{> FileItem_Read file=this}}
+        {{/each}}
+      </div>
+    </div>
+  {{/if}}
+</template>

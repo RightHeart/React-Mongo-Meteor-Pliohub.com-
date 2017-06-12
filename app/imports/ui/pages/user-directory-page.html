@@ -1,0 +1,7 @@
+<template name="UserDirectory_Page">
+  {{#Page}}
+    {{> UserDirectory_List organizationUsers=organizationUsers}}
+  {{else}}
+    {{> UserDirectory_Card_Read user=user}}
+  {{/Page}}
+</template>

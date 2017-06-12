@@ -1,0 +1,7 @@
+<template name="Departments_Read">
+  {{#if departments.count}}
+    {{> Fields_ListGroupItem_Read
+        label="Department(s)"
+        text=renderDepartments}}
+  {{/if}}
+</template>

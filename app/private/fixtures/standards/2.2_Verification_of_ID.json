@@ -1,0 +1,22 @@
+{
+  "_id": "HLiWGZdNL5hifyRhJ",
+  "organizationId": "KwKXz5RefrE5hjWJ2",
+  "title": "2. Verification of ID",
+  "typeId": "A5rMgdxG2JzpunfsT",
+  "sectionId": "PGie9fw7SuoqTPya8",
+  "nestingLevel": 1,
+  "description": "This is the standard for dealing with verification of ID",
+  "approvedAt": {"$date": 1459515600000},
+  "notes": null,
+  "createdAt": {"$date": 1459508400000},
+  "createdBy": "SQHmBKJ94gJvpLKLt",
+  "updatedAt": null,
+  "updatedBy": null,
+  "isDeleted": false,
+  "owner": "SQHmBKJ94gJvpLKLt",
+  "issueNumber": 1,
+  "status": "issued",
+  "isApproved": true,
+  "isDeleted": false,
+  "viewedBy": []
+}

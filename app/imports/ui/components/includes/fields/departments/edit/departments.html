@@ -1,0 +1,12 @@
+<template name="Departments_Edit">
+  {{#FormField label=label helpText=helpText}}
+    {{> Select_Multi
+        selected=selected
+        items=departments
+        placeholder=placeholder
+        selectFirstIfNoSelected=selectFirstIfNoSelected
+        onUpdate=onUpdateCb
+        onRemove=onRemoveCb
+        content=content}}
+  {{/FormField}}
+</template>

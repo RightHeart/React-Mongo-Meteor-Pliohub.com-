@@ -1,0 +1,42 @@
+<template name="Actions_Edit">
+  <div>
+    <div class="relative">
+      {{#with action}}
+        {{> Actions_Card_Edit_Main
+            isLinkedToEditable=isLinkedToEditable
+            action=this
+            type=this.type
+            completeFn=getCompleteFn
+            undoCompletionFn=getUndoCompletionFn
+            verifyFn=getVerifyFn
+            undoVerificationFn=getUndoVerificationFn
+            linkStandardFn=getLinkStandardFn
+            unlinkStandardFn=getUnlinkStandardFn
+            linkDocumentFn=getLinkDocumentFn
+            unlinkDocumentFn=getUnlinkDocumentFn
+            updateCompletionDateFn=getUpdateCompletionDateFn
+            updateCompletionExecutorFn=getUpdateCompletionExecutorFn
+            updateVerificationDateFn=getUpdateVerificationDateFn
+            updateVerificationExecutorFn=getUpdateVerificationExecutorFn}}
+
+        {{> Subcards_Notify_Edit
+            doc=this
+            documentType="action"
+            onUpdate=onUpdateNotifyUserCb}}
+
+        {{> Subcards_Notes_Edit
+            notes=this.notes}}
+
+        {{> Subcards_OtherFiles_Edit
+            label="Files"
+            _id=this._id
+            fileIds=this.fileIds
+            uploaderMetaContext=uploaderMetaContext
+            slingshotDirective=slingshotDirective}}
+      {{/with}}
+      <div class="card-block text-xs-center">
+        <button type="button" class="btn btn-secondary" {{b "click: remove"}}>Delete</button>
+      </div>
+    </div>
+  </div>
+</template>

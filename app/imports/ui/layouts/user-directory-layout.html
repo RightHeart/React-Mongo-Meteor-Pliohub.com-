@@ -1,0 +1,19 @@
+<template name="UserDirectory_Layout">
+  {{> UserDirectory_Header}}
+
+  <div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        {{#if isReady}}
+          {{#with organization}}
+            {{> Template.dynamic template=content}}
+          {{else}}
+            {{> NotFoundPage subject="organization" subjectId=organizationSerialNumber}}
+          {{/with}}
+        {{else}}
+          {{> PreloaderPage}}
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</template>

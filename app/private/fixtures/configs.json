@@ -1,0 +1,15 @@
+{
+  "Organizations": "organizations",
+  "Standards": "standards",
+  "StandardsBookSections": "standardsBookSections",
+  "StandardTypes": "standardTypes",
+  "Meteor.users": "users",
+  "NonConformities": "nonConformities",
+  "Occurrences": "occurrences",
+  "Actions": "actions",
+  "RiskTypes": "riskTypes",
+  "Risks": "risks",
+  "WorkItems": "workItems",
+  "LessonsLearned": "lessonsLearned",
+  "Discussions": "discussions"
+}

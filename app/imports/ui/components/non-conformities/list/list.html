@@ -1,0 +1,54 @@
+<template name="NC_List">
+  {{#List_Read
+    ref="list"
+    _id=NCId
+    onModalOpen=onModalOpen
+    onSearchInputValue=onSearchInputValue
+    onAfterSearch=onAfterSearch}}
+
+      {{#if isActiveNCFilter 1}}
+        {{#each magnitude}}
+          {{> ListItem
+              template="NC_SectionItem"
+              items=this.items
+              title=this.name
+              magnitude=this.value
+              hideRTextOnExpand=true
+              unreadMessagesCount=this.unreadMessagesCount
+              rText=(calculateTotalCost this.items)}}
+        {{/each}}
+      {{/if}}
+
+      {{#if isActiveNCFilter 2}}
+        {{#each statuses}}
+          {{> ListItem
+              template="NC_SectionItem"
+              items=this.items
+              title=(getStatusName this.status)
+              hideRTextOnExpand=true
+              unreadMessagesCount=this.unreadMessagesCount
+              rText=(calculateTotalCost this.items)}}
+        {{/each}}
+      {{/if}}
+
+      {{#if isActiveNCFilter 3}}
+        {{#each departments}}
+          {{> ListItem
+              template="NC_SectionItem"
+              items=this.items
+              title=this.name
+              closeAllOnCollapse=false
+              hideRTextOnExpand=true
+              unreadMessagesCount=this.unreadMessagesCount
+              rText=(calculateTotalCost this.items)}}
+        {{/each}}
+      {{/if}}
+
+      {{#if isActiveNCFilter 4}}
+        {{#each deleted}}
+          {{> NC_Item}}
+        {{/each}}
+      {{/if}}
+
+  {{/List_Read}}
+</template>

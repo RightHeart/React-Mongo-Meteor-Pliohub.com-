@@ -1,0 +1,166 @@
+{
+  "_id": "8bcNPN8sKTtJFw4uy",
+  "name": "FE International Ltd",
+  "serialNumber": 99,
+  "users": [
+    {
+      "joinedAt": { "$date": 1459508400000 },
+      "userId": "SQHmBKJ94gJvpLKLt",
+      "role": "owner"
+    },
+    {
+      "userId": "TCstWknRczHkvP6j4",
+      "role": "member"
+    },
+    {
+      "joinedAt": { "$date": 1459508400000 },
+      "userId": "ABKpuGYiJHKhDwLDk",
+      "role": "owner"
+    },
+    {
+      "userId": "kLwSLeYKSxApPFErZ",
+      "role": "member"
+    }
+  ],
+  "timezone": "Europe/London",
+  "currency": "GBP",
+  "createdAt": {"$date": 1459508400000},
+  "createdBy": "Plio",
+  "updatedAt": null,
+  "updatedBy": null,
+  "isDeleted": false,
+  "workflowDefaults": {
+    "minorProblem": {
+      "workflowType": "3-step",
+      "stepTime": {
+        "timeValue": 1,
+        "timeUnit": "days"
+      }
+    },
+    "majorProblem": {
+      "workflowType": "6-step",
+      "stepTime": {
+        "timeValue": 2,
+        "timeUnit": "days"
+      }
+    },
+    "criticalProblem": {
+      "workflowType": "6-step",
+      "stepTime": {
+        "timeValue": 3,
+        "timeUnit": "days"
+      }
+    }
+  },
+  "reminders": {
+    "minorNc": {
+      "start": {
+        "timeValue": 1,
+        "timeUnit": "days"
+      },
+      "interval": {
+        "timeValue": 1,
+        "timeUnit": "days"
+      },
+      "until": {
+        "timeValue": 2,
+        "timeUnit": "days"
+      }
+    },
+    "majorNc": {
+      "start": {
+        "timeValue": 2,
+        "timeUnit": "days"
+      },
+      "interval": {
+        "timeValue": 2,
+        "timeUnit": "days"
+      },
+      "until": {
+        "timeValue": 4,
+        "timeUnit": "days"
+      }
+    },
+    "criticalNc": {
+      "start": {
+        "timeValue": 3,
+        "timeUnit": "days"
+      },
+      "interval": {
+        "timeValue": 3,
+        "timeUnit": "days"
+      },
+      "until": {
+        "timeValue": 6,
+        "timeUnit": "days"
+      }
+    },
+    "improvementPlan": {
+      "start": {
+        "timeValue": 1,
+        "timeUnit": "days"
+      },
+      "interval": {
+        "timeValue": 1,
+        "timeUnit": "days"
+      },
+      "until": {
+        "timeValue": 2,
+        "timeUnit": "days"
+      }
+    }
+  },
+  "review": {
+    "risks": {
+      "frequency": {
+        "timeValue": 12,
+        "timeUnit": "months"
+      },
+      "reminders": {
+        "start": {
+          "timeValue": 2,
+          "timeUnit": "weeks"
+        },
+        "interval": {
+          "timeValue": 1,
+          "timeUnit": "weeks"
+        },
+        "until": {
+          "timeValue": 4,
+          "timeUnit": "weeks"
+        }
+      }
+    },
+    "standards": {
+      "frequency": {
+        "timeValue": 12,
+        "timeUnit": "months"
+      },
+      "reminders": {
+        "start": {
+          "timeValue": 2,
+          "timeUnit": "weeks"
+        },
+        "interval": {
+          "timeValue": 1,
+          "timeUnit": "weeks"
+        },
+        "until": {
+          "timeValue": 4,
+          "timeUnit": "weeks"
+        }
+      }
+    }
+  },
+  "ncGuidelines" : {
+    "minor" : "Please go to Org Settings to define what a minor non-conformity means in your organization.",
+    "major" : "Please go to Org Settings to define what a major non-conformity means in your organization.",
+    "critical" : "Please go to Org Settings to define what a critical non-conformity means in your organization."
+  },
+  "rkGuidelines" : {
+    "minor" : "Please go to Org Settings to define what a minor risk means in your organization.",
+    "major" : "Please go to Org Settings to define what a major risk means in your organization.",
+    "critical" : "Please go to Org Settings to define what a critical risk means in your organization."
+  },
+  "rkScoringGuidelines": "Please go to Org Settings to define what risk scoring means in your organization."
+}

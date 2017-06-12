@@ -1,0 +1,10 @@
+app/.meteor/local
+app/.meteor/dev_bundle
+app/settings-local.json
+node_modules
+deploy
+.idea
+.DS_Store
+mup.js
+settings*.json
+npm-debug.log

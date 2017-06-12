@@ -1,0 +1,12 @@
+<template name="FileItem">
+  {{#if isReadOnly}}
+    {{> FileItem_Read file=file}}
+  {{else}}
+    <div class="btn-group file-item">
+      <div class="button-wrapper">
+        {{> FileItem_Read file=file}}
+      </div>
+      {{> DeleteButton smallIcon=true onClick=removeClickFn}}
+    </div>
+  {{/if}}
+</template>

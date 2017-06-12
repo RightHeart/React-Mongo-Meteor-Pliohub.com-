@@ -1,0 +1,13 @@
+<template name="ESSources">
+  {{> Sources_Edit
+      label=label
+      id=id
+      sourceType=sourceType
+      sourceUrl=sourceUrl
+      sourceFileId=sourceFileId
+      sourceHtmlUrl=sourceHtmlUrl
+      slingshotDirective='standardFiles'
+      metaContext=uploaderMetaContext
+      convertDocxToHtml=(callback 'convertDocxToHtml')
+      removeSourceFileCb=(callback 'onRemoveSourceFile')}}
+</template>

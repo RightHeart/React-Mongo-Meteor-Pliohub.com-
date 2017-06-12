@@ -1,0 +1,21 @@
+<template name="Actions_CreateSubcard">
+  {{> NC_Title_Edit title=title label="Title"}}
+
+  {{> DescriptionTextBox description=description label="Description"}}
+
+  {{> Actions_LinkedTo_Edit
+      type=type
+      linkedTo=linkedTo
+      standardId=standardId
+      isEditable=isLinkedToEditable}}
+
+  {{> Actions_Owner ownerId=ownerId}}
+
+  {{> Actions_PlanInPlace planInPlace=planInPlace}}
+
+  <hr />
+
+  {{> Actions_CompletionTargetDate completionTargetDate=completionTargetDate}}
+
+  {{> Actions_ToBeCompletedBy toBeCompletedBy=toBeCompletedBy}}
+</template>

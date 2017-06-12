@@ -1,0 +1,39 @@
+<template name="atForm">
+  {{#unless hide}}
+    <div class="card">
+      <div class="card-header text-xs-center">
+        {{#if showTitle}}
+          {{> atTitle}}
+        {{/if}}
+      </div>
+      <div class="card-block">
+        <div class="at-form">
+          {{#if showError}}
+            {{> atError}}
+          {{/if}}
+          {{#if showResult}}
+            {{> atResult}}
+          {{/if}}
+          {{#if showPwdForm}}
+            {{> atPwdForm}}
+          {{/if}}
+          {{> atPwdFormBtn}}
+          {{#if showMessage}}
+            {{> atMessage}}
+          {{/if}}
+        </div>
+      </div>
+      <div class="card-footer">
+        {{#if showForgotPasswordLink}}
+          {{> atPwdLink}}
+        {{/if}}
+        {{#if showSignInLink}}
+          {{> atSigninLink}}
+        {{/if}}
+        {{#if showSignUpLink}}
+          {{> atSignupLink}}
+        {{/if}}
+      </div>
+    </div>
+  {{/unless}}
+</template>
